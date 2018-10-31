@@ -10,9 +10,10 @@ public class PlayerController : MonoBehaviour {
 
     //Private vars :- 
     bool isTouchingPlayer;
-
     Vector2 bodyOffset;
-    //private PowerUp storedPowerUp
+
+    private PowerUp superPowerUp;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -22,8 +23,24 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 
         MoveAround();
+
+        if (superPowerUp != null)
+        {
+            //TODO : Playe superPower notification animation clip
+            UseSuperPowerUp();
+        }
 	}
 
+    void UseSuperPowerUp()
+    {
+        if (Input.touchCount == 1)
+        {
+            if (Input.touchCount > 0)
+            {
+                //TODO: call the apply function in superPowerUp member var.
+            }
+        }
+    }
     void MoveAround()
     {
         //This function controls the player by dragging it around.
